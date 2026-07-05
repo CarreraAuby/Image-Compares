@@ -1,1 +1,105 @@
-# Image-Compaire
+# Project Kompresi Image dengan PCA
+Aljabar Linear Kelas D — Kelompok 2
+
+Anggota:
+1. Carrera Abi Saputra — (L0125076)
+2. Ersandy Fahreza — (L0125129)
+3. Regita Ariella Safa Wardani — (L0125137)
+
+## Cara Menjalankan Program
+
+Program ini adalah website lokal sederhana untuk mengompresi gambar
+menggunakan algoritma PCA (Principal Component Analysis) via SVD.
+
+### Langkah 1: Pastikan Python sudah terinstall
+
+Buka terminal/command prompt, ketik:
+```
+python --version
+```
+atau
+```
+python3 --version
+```
+Program ini diuji menggunakan Python 3.12. Disarankan menggunakan Python
+3.9 atau lebih baru.
+
+### Langkah 2: Install library yang dibutuhkan
+
+Masuk ke folder `src`, lalu jalankan:
+```
+cd src
+pip install -r requirements.txt
+```
+
+Jika muncul error `pip: command not found`, coba ganti `pip` dengan `pip3`.
+
+Jika muncul error terkait permission/akses pada sistem Linux/Mac, coba
+tambahkan `--user` di akhir command:
+```
+pip install -r requirements.txt --user
+```
+
+### Langkah 3: Jalankan aplikasi
+
+Program ini dirancang agar tetap berjalan benar dari direktori manapun
+Anda menjalankannya — baik dari dalam folder `src/`, maupun dari folder
+project (root) di luar `src/`. Pilih salah satu cara berikut:
+
+**Cara A — dari dalam folder `src`:**
+```
+cd src
+python app.py
+```
+
+**Cara B — dari folder root project (tanpa masuk ke `src` dulu):**
+```
+python src/app.py
+```
+
+Kedua cara di atas akan menghasilkan perilaku yang sama persis. Jika
+muncul error `python: command not found`, ganti `python` dengan `python3`.
+
+Jika berhasil, akan muncul tulisan seperti ini di terminal:
+```
+ * Running on http://127.0.0.1:5000
+```
+
+### Langkah 4: Buka di browser
+
+Buka browser (Chrome/Firefox/Edge), lalu kunjungi alamat:
+```
+http://127.0.0.1:5000
+```
+
+Akan muncul halaman untuk mengupload gambar dan memasukkan nilai k
+(tingkat kompresi). Gambar contoh untuk uji coba tersedia di folder
+`test/sample.jpg`.
+
+### Menghentikan Program
+
+Kembali ke terminal, tekan `CTRL + C` untuk menghentikan server.
+
+## Struktur Folder
+
+```
+src/   -> source code program (Python)
+test/  -> data uji (gambar contoh)
+doc/   -> dokumentasi tambahan dan draft teori
+```
+
+## Troubleshooting (Jika Terjadi Masalah)
+
+**Error: ModuleNotFoundError: No module named 'flask' (atau numpy/PIL)**
+-> Jalankan ulang langkah 2 (`pip install -r requirements.txt`). Library
+belum terinstall di komputer ini.
+
+**Error: Address already in use / port 5000 sudah dipakai**
+-> Aplikasi lain di komputer sedang memakai port 5000. Tutup aplikasi
+tersebut, atau edit baris terakhir `app.py` menjadi:
+`app.run(debug=True, port=5001)` lalu akses `http://127.0.0.1:5001`
+
+**Halaman browser blank/tidak bisa diakses**
+-> Pastikan terminal masih menjalankan `app.py` (jangan ditutup), dan
+pastikan mengetik alamat dengan benar: `http://127.0.0.1:5000` (bukan
+https, dan port harus 5000 kecuali diubah manual).

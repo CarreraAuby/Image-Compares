@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Compression - PCA</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Image Compression</h1>
+      </header>
+
+      <main>
+        <section class="input-section">
+          <h3>Input Your Image</h3>
+
+          <div class="form-group">
+            <label for="imageInput" class="custom-file-upload"
+              >Choose File</label
+            >
+            <input type="file" id="imageInput" accept="image/*" />
+            <span id="fileNameDisplay">No File Chosen</span>
+          </div>
+
+          <div class="form-group">
+            <label for="compression">Image Compression Rate:</label>
+            <input type="range" id="compression" min="1" max="100" value="50" />
+            <span id="sliderValue">50</span>%
+          </div>
+
+          <button type="button" id="compressBtn">Compress Image</button>
+        </section>
+
+        <section class="preview-section">
+          <div class="preview-box">
+            <h4>Before</h4>
+            <div class="image-container">
+              <img
+                id="beforeImage"
+                src="#"
+                alt="Original Image Preview"
+                class="hidden"
+              />
+              <div id="beforePlaceholder" class="placeholder">
+                <svg
+                  width="64"
+                  height="64"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#ccc"
+                  stroke-width="1.5"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <path d="M21 15l-5-5L5 21" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-box">
+            <h4>After</h4>
+            <div class="image-container">
+              <img
+                id="afterImage"
+                src="#"
+                alt="Compressed Image Preview"
+                class="hidden"
+              />
+              <div id="afterPlaceholder" class="placeholder">
+                <svg
+                  width="64"
+                  height="64"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#ccc"
+                  stroke-width="1.5"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <path d="M21 15l-5-5L5 21" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="info-section">
+          <div class="metrics">
+            <p>
+              <strong>Original File Size:</strong>
+              <span id="originalFileSize">-</span>
+            </p>
+            <p>
+              <strong>Compressed File Size:</strong>
+              <span id="compressedFileSize">-</span>
+            </p>
+            <p>
+              <strong>Original Size:</strong> <span id="originalSize">-</span>
+            </p>
+            <p>
+              <strong>Compressed Size:</strong>
+              <span id="compressedSize">-</span>
+            </p>
+            <p>
+              <strong>Compression Rate:</strong>
+              <span id="compressionRate">-</span>
+            </p>
+            <p><strong>Runtime:</strong> <span id="runtime">-</span></p>
+          </div>
+
+          <div class="download-container">
+            <a
+              id="downloadBtn"
+              href="#"
+              download="compressed_image.png"
+              class="disabled"
+              >Download</a
+            >
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+    <script src="/static/script_connect.js"></script>
+  </body>
+</html>
