@@ -48,30 +48,22 @@ def compress():
     input_path = UPLOAD_FOLDER / file.filename
     file.save(str(input_path))
 
-    # Ukuran file asli di disk (bytes) - untuk ditampilkan ke user
     original_file_size_bytes = input_path.stat().st_size
 
     image_array = load_image(str(input_path))
 
     max_k = get_max_k(image_array)
 
-    # Konversi slider (1-100, makin besar = makin banyak dikompres) jadi k.
-    # Slider besar -> k kecil -> detail yang disimpan sedikit -> file lebih kecil.
-    # Slider kecil -> k besar -> detail yang disimpan banyak -> file lebih besar.
     k = max(1, round(max_k * (1 - compression_percent / 100)))
 
     result = compress_image(image_array, k)
 
-    # Konversi rate compression (1-100) jadi kualitas JPEG (95-20).
-    # Rate besar -> kualitas rendah -> file JPG beneran mengecil di disk,
-    # bukan cuma berkurang secara teoretis (k) tapi tidak terlihat di file asli.
     jpeg_quality = max(20, round(95 - (compression_percent / 100) * 75))
 
     output_filename = f"compressed_{file.filename}"
     output_path = OUTPUT_FOLDER / output_filename
     save_image(result["compressed_image"], str(output_path), quality=jpeg_quality)
 
-    # Ukuran file hasil kompresi di disk (bytes) - untuk ditampilkan ke user
     compressed_file_size_bytes = output_path.stat().st_size
 
     return jsonify({
