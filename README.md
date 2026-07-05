@@ -1,11 +1,24 @@
-# Project Kompresi Image dengan PCA
-Aljabar Linear Kelas D — Kelompok 2
+<p align="center">
+  <img src="Logo uns.png" alt="Logo UNS" width="250"/>
+</p>
 
-Anggota:
-1. Carrera Abi Saputra — (L0125076)
-2. Ersandy Fahreza — (L0125129)
-3. Regita Ariella Safa Wardani — (L0125137)
+<h1 align="center">  Face Recognition Menggunakan Eigenface </h1>
 
+<p align="center">
+  <strong>Kelompok 2 <br> informatika D <br> Universitas Sebelas Maret</strong>
+</p>
+
+---
+## 👥 Anggota Kelompok
+| NIM        | NAMA                           |
+|:-----------|:-----------------              |
+| L0125076   | Carrera Abi Saputra            |
+| L0125129   | Ersandy Fahreza                |
+| L0125137   | Regita Ariella Safa Wardani    |
+
+**Dosen Pengampu:** Drs. Bambang Harjito, M.App.Sc., Ph.D.
+
+---
 ## Cara Menjalankan Program
 
 Program ini adalah website lokal sederhana untuk mengompresi gambar
