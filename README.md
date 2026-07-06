@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="Logo uns.png" alt="Logo UNS" width="250"/>
-</p>
-
 <h1 align="center">  Image Compres dengan PCA  </h1>
 
 <p align="center">
