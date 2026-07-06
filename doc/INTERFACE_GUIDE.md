@@ -7,8 +7,6 @@
 ```python
 from image_utils import load_image
 
-# filepath = lokasi file yang baru saja diupload user (misal hasil request.files['image'].save(...))
-image_array = load_image(filepath)
 ```
 
 ### 2. Mengompresi gambar
@@ -16,11 +14,6 @@ image_array = load_image(filepath)
 ```python
 from pca_compressor import compress_image, get_max_k
 
-# Opsional: untuk validasi input k dari user (misal di slider HTML)
-max_k = get_max_k(image_array)
-
-# k = nilai yang diinput user (misal dari form HTML, harus di-convert ke int)
-result = compress_image(image_array, k)
 ```
 
 `result` adalah sebuah **dictionary** dengan isi:
@@ -40,8 +33,6 @@ result = compress_image(image_array, k)
 from image_utils import save_image
 
 save_image(result['compressed_image'], 'static/output/hasil.jpg')
-# Setelah ini, file siap untuk di-download lewat route Flask, misal:
-# @app.route('/download/<filename>')
 ```
 
 ## Contoh Lengkap Pemakaian di Flask (untuk referensi)
