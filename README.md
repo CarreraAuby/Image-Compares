@@ -126,6 +126,3 @@ tersebut, atau edit baris terakhir `app.py` menjadi:
 -> Pastikan terminal masih menjalankan `app.py` (jangan ditutup), dan
 pastikan mengetik alamat dengan benar: `http://127.0.0.1:5000` (bukan
 https, dan port harus 5000 kecuali diubah manual).
-
-## Github
-https://github.com/CarreraAuby/Image-Compares
