@@ -14,18 +14,6 @@
 
 **Dosen Pengampu:** Drs. Bambang Harjito, M.App.Sc., Ph.D.
 
-## Algoritma PCA
-
-Kompresi gambar dilakukan menggunakan **Principal Component Analysis (PCA)** lewat eigendecomposition dari matriks kovariansi, diterapkan pada fungsi `compress_channel()` di `pca_compressor.py`:
-
-1. **Hitung Mean tiap kolom**: `mean_vector = np.mean(channel, axis=0)`
-2. **Pusatkan data**: kurangi setiap baris dengan mean → `centered = channel - mean_vector`
-3. **Matriks Kovariansi**: `covariance_matrix = (centered.T @ centered) / (n_samples - 1)`
-4. **Eigendekomposisi**: `eigenvalues, eigenvectors = np.linalg.eigh(covariance_matrix)`
-5. **Pilih k Komponen**: urutkan eigenvalue descending (`np.argsort(eigenvalues)[::-1]`), ambil k eigenvector pertama sebagai `principal_components`
-6. **Proyeksi & Rekonstruksi**: proyeksikan data ke ruang PC baru (`projected = centered @ principal_components`), lalu kembalikan ke ruang asli (`reconstructed = (projected @ principal_components.T) + mean_vector`)
-
-Kompresi dilakukan **terpisah per channel warna (R, G, B)** di dalam `compress_image()`, agar warna asli gambar tetap terjaga.
 ---
 ## Cara Menjalankan Program
 
